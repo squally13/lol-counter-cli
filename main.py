@@ -15,10 +15,13 @@ if response.status_code == 200:
 
     # Find the first div element with a specific class
     div_element = soup.find('div', class_='counters-list gold-diff')
+    links = div_element.find_all('a')
 
-    # Print the content of the div element
-    if div_element:
-        print(div_element)
+    if links:
+        for index, link in enumerate(links, start=1):
+            champion_div = link.find('div', class_='col-2')
+            champion_name = champion_div.find('div', class_='champion-name').text
+            print(f"{index}. {champion_name}")
     else:
         print("Div element not found.")
 else:
