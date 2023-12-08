@@ -1,13 +1,13 @@
 from bs4 import BeautifulSoup
 import requests
 while True:
-    champion = str(input("Type champion (or q to quit): ")).lower().strip()
+    champion = str(input("Type champion (q to quit): ")).lower().strip()
 
     if champion == 'q':
         print("Exiting...")
         break
 
-    use_previous = str(input("Use previous patch?(y - yes: ")).lower()
+    use_previous = str(input("Use previous patch? (y - yes): ")).lower()
 
     url = f'https://u.gg/lol/champions/{champion}/counter'
 
